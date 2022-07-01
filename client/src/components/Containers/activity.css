@@ -1,0 +1,142 @@
+.activity{
+    color:rgb(25, 73, 99);
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    box-shadow: 0 5px 10px rgba(0,0,0, .6);
+    background-color: rgba(176, 175, 175, 0.7);
+    margin: 0px 10% 0 10%;
+    padding: 2em 3em 2em 3em;
+    border-radius: 20px;
+
+}
+.inputs {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0px 50px 0 50px;
+    color: rgb(25, 73, 99);
+    
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.in {
+    padding: 0 0 0 30px;
+    height: 50px;
+    width: 280px;
+    margin: 5px 20px 5px 20px;
+    border: none;
+    border-radius: 7px;
+    background-color: rgb(189, 189, 189);
+    color: rgb(25, 73, 99);
+}
+.in:focus{
+    outline:none;
+}
+.in::placeholder{
+    color:rgb(25, 73, 99);
+}
+.inDuracion{
+    padding: 0 30px;
+    height: 50px;
+    width: 250px;
+    margin: 5px 20px 5px 20px;
+    border: none;
+    border-radius: 7px;
+    background-color: rgb(189, 189, 189);
+    color: rgb(25, 73, 99);
+}
+.inDuracion:focus{
+    outline:none;
+}
+.inSelect {
+    padding: 0 30px 0 30px;
+    margin: 5px 20px 5px 20px;
+    color: rgb(25, 73, 99);
+    flex-wrap: wrap;
+    height: 50px;
+    width: 310px;
+    border: none;
+    border-radius: 7px;
+    background-color: rgb(189, 189, 189);
+}
+.inSelect:focus{
+    outline:none;
+}
+.enviar {
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    margin: 5px 20px 5px 20px;
+    color: rgb(25, 73, 99);
+    flex-wrap: wrap;
+    height: 50px;
+    width: 310px;
+    border: none;
+    border-radius: 7px;
+}
+.imagen {
+    max-height:20em;
+    max-width: 30em;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-position: bottom;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px 20px 20px 20px;
+    align-content: center;
+}
+
+.rigth{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.paisElegido{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    background-color: rgb(25, 73, 99);
+    border-radius: 7px;
+    margin: 10px 0 0 0;
+    
+    /* width: 350px; */
+}
+
+.botoncito{
+    display: flex;
+    justify-content: flex-end;
+    font-size: large;
+    color: rgb(194, 194, 194);
+    border-radius: 20px;
+    height: 30px;
+    width: 30px;
+    margin: 3px 0 0 0;
+    background-color: rgb(25, 73, 99);
+    border: rgb(194, 194, 194);
+    cursor: pointer;
+    transition: all 600ms;
+}
+.nombre {
+   color: rgb(194, 194, 194); 
+}
+.botoncito:hover {
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+ }
+ .botoncito:focus{
+    transform: scale(0.9);
+ }

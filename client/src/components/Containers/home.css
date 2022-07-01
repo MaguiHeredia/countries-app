@@ -1,0 +1,15 @@
+.home {
+    /* background-image: url('https://images.unsplash.com/photo-1478860409698-8707f313ee8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80');  */
+    display: flex;
+    /* background-image: url('https://img.freepik.com/foto-gratis/textura-papel-blanco_1194-2324.jpg?w=2000'); */
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.cartas{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
