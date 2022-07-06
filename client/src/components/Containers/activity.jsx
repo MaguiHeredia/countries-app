@@ -72,7 +72,6 @@ function Activity({ names, getName, getCountries }) {
 
     function handleChangeCountry(ev) {
         if (ev.target.value) {
-
             if (!activities.Paises?.includes(ev.target.value)) {
                 setActivity({
                     ...activities,
@@ -116,6 +115,7 @@ function Activity({ names, getName, getCountries }) {
                         Paises: []
                     });
                     console.log('creado con exito')
+                    alert('Activity created successfully')
                 }
             })
                 .catch(() => {
@@ -126,7 +126,9 @@ function Activity({ names, getName, getCountries }) {
                         Temporada: '',
                         temperaments: []
                     });
+                    setErrors({name:'Name is required'})
                     console.log('no se creo')
+                    alert('The activity is not created')
                 })
         }
     }

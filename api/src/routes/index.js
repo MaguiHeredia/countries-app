@@ -13,43 +13,7 @@ const router = Router();
 //                 const nombre = elem.name.official;
 //                 const bandera = elem.flag;
 //                 const continente = elem.continents[0];
-//                 const subregion = elem.subregion;
-//                 const area = elem.area;
-//                 const poblacion = elem.population;
-//                 const id = elem.cca3;
-//                 if(!elem.capital){
-//                     // console.log(nombre)
-//                     // console.log(continente)
-//                     // console.log(subregion)
-//                     // console.log(area)
-//                     // console.log(poblacion)
-//                     // console.log(id)
-//                     Country.create({ 
-//                         name: nombre, 
-//                         ID: id, 
-//                         //Bandera: e.flag, 
-//                         Continente: continente, 
-//                         Subregion: subregion, 
-//                         Area: area, 
-//                         Poblacion: poblacion});
-//                 } else {
-//                 const cap = elem.capital.toString()
-//                 Country.create({ 
-//                     name: nombre, 
-//                     ID: id, 
-//                     //Bandera: e.flag, 
-//                     Continente: continente, 
-//                     Capital: cap, 
-//                     Subregion: subregion, 
-//                     Area: area, 
-//                     Poblacion: poblacion});
-//                 }
-//             })
-//             const resp = await Country.findAll()
-//             console.log(resp[0])
-//             res.json(resp)
-  
-//           })
+//
 
 router.get('/countries', async (req, res) => {
     const {name}= req.query;
@@ -114,65 +78,7 @@ router.get('/countries', async (req, res) => {
 }
    
 })
-// Configurar los routers
-// Ejemplo: router.use('/auth', authRouter);
-// router.get('/countries', (req, res) => {
-//     // Country.create({
-//     //     name: 'martina', 
-//     //     ID: 111, 
-//     //     Bandera: 'bandera', 
-//     //     Continente: 'america', 
-//     //     Subregion: 'sur', 
-//     //     Area: 34562.72, 
-//     //     Poblacion: 153143
-//     // }).then(respuesta => console.log(respuesta.Continente))
-//     // const pais = await Country.findAll()
-//     // console.log(pais)
-//     // res.json(pais)
-//     axios.get('https://restcountries.com/v3/all')
-//     .then((respuesta) => {
-//         //console.log(respuesta.data[0].capital[0])
-//         respuesta.data.map(elem => {
-//             const nombre = elem.name.official;
-//             const bandera = elem.flag;
-//             const continente = elem.continents[0];
-//             const subregion = elem.subregion;
-//             const area = elem.area;
-//             const poblacion = elem.population;
-//             const id = elem.cca3;
-//             if(!elem.capital){
-//                 // console.log(nombre)
-//                 // console.log(continente)
-//                 // console.log(subregion)
-//                 // console.log(area)
-//                 // console.log(poblacion)
-//                 // console.log(id)
-//                 Country.create({ 
-//                     name: nombre, 
-//                     ID: id, 
-//                     //Bandera: e.flag, 
-//                     Continente: continente, 
-//                     Subregion: subregion, 
-//                     Area: area, 
-//                     Poblacion: poblacion})
-//             } else {
-//             const cap = elem.capital.toString()
-//             Country.create({ 
-//                 name: nombre, 
-//                 ID: id, 
-//                 //Bandera: e.flag, 
-//                 Continente: continente, 
-//                 Capital: cap, 
-//                 Subregion: subregion, 
-//                 Area: area, 
-//                 Poblacion: poblacion})
-//             }
-//         })
-//       })
-//      .then(Country.findAll())
-//       .then(respuesta => console.log(respuesta))
-//      //.then(Country.findAll().then(respuesta => console.log(respuesta)))
-// })
+
 
 router.get('/activities', async (req, res) => {
     const find= await Country.findAll({attributes: ['name', 'ID']})
@@ -187,22 +93,10 @@ router.get('/countries/:id', async (req, res) => {
         include: Activity
     })
     if(encontrar) res.json(encontrar)
-    else res.status(404).send('No country with that id was found')
+    else res.status(404).json({error: 'No country with that id was found'})
 })
 
-// router.post('/activities', async (req, res) => {
-//     console.log(req.body)
-//     const {paises, name, Dificultad, Duracion, Temporada, ID} = req.body
-//     const pais = paises;
-//     try {
-//         const crear = await Activity.create({ID, name, Dificultad, Duracion, Temporada})
-//         await crear.addCountry(pais)
-//          return res.json(crear)
-//     } catch (error) {
-//         console.log(error)
-//         return res.status(404).send('Error in creating the Activity')
-//     }
-// })
+
 router.get('/activitiesTotal', async function (req, res){
     try {
         let find = await Activity.findAll()
@@ -212,10 +106,6 @@ router.get('/activitiesTotal', async function (req, res){
     }
 })
 router.post("/activities", async function (req, res) {
-    //recibir datos por body
-    // crear vidoejuego
-    // encontrar generos relacionados
-    // vincular con genre (con add)
     try {
   
       let {name, Dificultad, Duracion, Temporada, paises} = req.body;

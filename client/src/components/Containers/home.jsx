@@ -18,13 +18,13 @@ function Home({ countries, getCountries }) {
     }, [])
 
     const indexOfLastPost = currentPage * postsPerPage;
-    // 1 * 8 = 8
-    // 2 * 8 = 16
-    // 3 * 8 = 24
+    // 1 * 10 = 10
+    // 2 * 10 = 20
+    // 3 * 10 = 30
 
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    // 8 - 8 = 0
-    // 16 - 8 = 8
+    // 10 - 10 = 0
+    // 20 - 10 = 10
 
     let currentPosts = paisesHome.slice(indexOfFirstPost, indexOfLastPost);
     /*
@@ -44,9 +44,9 @@ function Home({ countries, getCountries }) {
         setCurrentPage(1)
     }, [paisesHome])
 
-    useEffect(() => {
-        console.log('soy currentPost',currentPosts)
-    },[])
+    // useEffect(() => {
+    //     console.log('soy currentPost',currentPosts)
+    // },[])
     // Change page
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -70,7 +70,7 @@ function Home({ countries, getCountries }) {
             </div>
             {
         Math.ceil(paisesHome.length / postsPerPage) > 1 
-        ?  <Pagination postsPerPage={postsPerPage} totalPosts={paisesHome.length} paginate={paginate} />
+        ?  <Pagination currentPage={currentPage} paisesHome={paisesHome} postsPerPage={postsPerPage} totalPosts={paisesHome.length} paginate={paginate} />
         : null
         }
         </div>

@@ -24,9 +24,9 @@ const country = {
 // });
 describe('GET /countries/:id', function () {
 
-  it('GET responde con error si no se le pasa un id correcto', function () {
-    agent.get('/countries/ARGENTINA')
-      .expect(400)
+  it('GET responde con error si no se le pasa un id', async function () {
+    let res = await agent.get('/countries/ARGENTINA')
+      .expect(404)
       .expect('Content-Type', /json/)
       .expect(function (res) {
         expect(res.body).to.deep.eql({error: 'No country with that id was found'})

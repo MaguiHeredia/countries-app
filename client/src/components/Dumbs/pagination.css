@@ -7,7 +7,7 @@
   border-radius: 20px;
   box-shadow: 0 5px 10px rgba(0,0,0, .6);
    background-color: rgba(176, 175, 175);
-  padding: .4em 2em;
+  padding: .2em 2em;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -44,12 +44,23 @@
   background-color: rgba(176, 175, 175);
 }
 .page-button:hover{
-  background: rgb(25, 73, 99);
+  background: rgb(108, 108, 108);
   color: rgb(194, 194, 194);
 }
 
-.page-button:focus,
+/* .page-button:focus,
 .page-button:visited {
   color: rgb(194, 194, 194);
+  background: rgb(108, 108, 108);
+} */
+.flechita {
+  filter:invert(100%);
+}
+.numeroPagina{
+  color: rgb(194, 194, 194);
   background: rgb(25, 73, 99);
+  border: none;
+  border-radius: 5px;
+  padding: .6em .8em;
+  margin: 0;
 }

@@ -82,6 +82,7 @@
     width: 310px;
     border: none;
     border-radius: 7px;
+    cursor: pointer;
 }
 .imagen {
     max-height:20em;
